@@ -2,6 +2,7 @@ from src import bot
 from dotenv import load_dotenv
 import sys
 
+
 def check_verion() -> None:
     import pkg_resources
     import src.log
@@ -25,6 +26,7 @@ def check_verion() -> None:
             logger.error(f'{name} version {version} is installed but does not match the requirements')
             sys.exit();
 
-if __name__ == '__main__': 
+
+if __name__ == '__main__':
     check_verion()
     bot.run_discord_bot()
