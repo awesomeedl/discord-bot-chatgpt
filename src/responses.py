@@ -3,11 +3,9 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-OPENAI_EMAIL = os.getenv("OPENAI_EMAIL")
-OPENAI_PASSWORD = os.getenv("OPENAI_PASSWORD")
-SESSION_TOKEN = os.getenv("SESSION_TOKEN")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-ENGINE = os.getenv("OPENAI_ENGINE")
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or os.getenv("APPSETTING_OPENAI_API_KEY")
+ENGINE = os.getenv("OPENAI_ENGINE") or os.getenv("APPSETTING_OPENAI_API_KEY")
 
 official_chatbot = Chatbot(api_key=OPENAI_API_KEY, engine=ENGINE)
 
